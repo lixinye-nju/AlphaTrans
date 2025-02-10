@@ -199,11 +199,22 @@ The project name is the name of a directory from `java_projects/original_project
 
 ### 2. Program Transformation
 
-Before doing program transformation, please follow the steps mentioned in [CodeQL Database Creation and Static Analysis](#1-codeql-database-creation--static-analysis) to properly create databases of reduced projects and generate query outputs. Then, execute the following to perform program transformation on a specific project. The `<project_dir_overload_methods>` and `<project_dir_overload_constructors>` are the directories of projects with overload methods and constructors. You can choose the directory names.
+Before doing program transformation, please follow the steps mentioned in [CodeQL Database Creation and Static Analysis](#1-codeql-database-creation--static-analysis) to properly create databases of reduced projects, generate query outputs and store them under `data/query_outputs/`. Then, execute the following to perform method transformation on a specific project. This script will assume project reduction has been done properly, since it attempts to perform method transformation on projects under `java_projects/automated_reduced_projects/`.
 
 ```
-bash scripts/program_transformation.sh <project_dir_overload_methods> <project_dir_overload_constructors> <project_name>
+bash scripts/method_transformation.sh <project_name>
 ```
+
+After method transformation, the tool creates a version of project with transformed methods under `java_projects/preprocessed_0/`. At this point, you need to create databases again and generate new query outputs to perform constructor transformation. Please make sure your query outputs are stored under `data/query_outputs/`. You can then execute the following to perform constructor transformation:
+
+```
+bash scripts/constructor_transformation.sh <project_name>
+```
+
+After successful execution, the tool creates a version of project with transformed constructors under `java_projects/cleaned_final_projects/`.
+
+> [!NOTE]
+> Due to limitations in the static analysis tool, some rare method/constructor transformations might need additional human investigation. To avoid this investigation, we provide a version of the transformed projects under `java_projects/cleaned_final_projects_decomposed_tests`. We aim at releasing the next version of the tool to completely resolve this issue with a better static analysis tool. If you still want to transform projects, please fix these few issues under `java_projects/cleaned_final_projects/` and achieve all test pass with maven.
 
 ### 3. Test Decomposition
 AlphaTrans performs test decomposition on transformed projects as a step to address the long-call chain problem when executing tests in target language. Please execute the following to first extract executed tests and their coverage, and use this information to decompose tests properly:

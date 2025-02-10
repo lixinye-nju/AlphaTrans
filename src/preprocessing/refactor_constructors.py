@@ -1,12 +1,11 @@
 import sys
 import os
 
-projects_dir = sys.argv[1]
-project = sys.argv[2]
-os.system(f'rm -rf java_projects/preprocessed_1/{project}')
-temp_project_path = f'java_projects/preprocessed_1/'
+project = sys.argv[1]
+temp_project_path = f'java_projects/cleaned_final_projects/'
 os.makedirs(temp_project_path, exist_ok=True)
-os.system(f'cp -r {projects_dir}/{project} {temp_project_path}')
+os.system(f'rm -rf java_projects/cleaned_final_projects/{project}')
+os.system(f'cp -r java_projects/preprocessed_0/{project} {temp_project_path}')
 
 
 def get_args(line):
