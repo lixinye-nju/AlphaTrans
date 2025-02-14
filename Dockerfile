@@ -72,6 +72,8 @@ ENV PATH="/home/AlphaTrans/misc/codeql:$PATH"
 RUN git clone https://github.com/github/vscode-codeql-starter.git
 WORKDIR /home/AlphaTrans/vscode-codeql-starter
 RUN git submodule update --init --remote
+WORKDIR /home/AlphaTrans/vscode-codeql-starter/ql
+RUN git checkout 3b2e55bc2ac942ac2cf2646f5c69acd081ce8ea2
 
 WORKDIR /home/AlphaTrans
 RUN cp queries/* vscode-codeql-starter/codeql-custom-queries-java
