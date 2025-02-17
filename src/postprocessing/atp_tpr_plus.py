@@ -150,6 +150,9 @@ def main(args):
         if len(list(test_case)) > 0:
             continue
 
+        if test_class_name is None:
+            continue
+
         py_test_results.setdefault(test_class_name, [])
         py_test_results[test_class_name].append(test_method_name)
 
