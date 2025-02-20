@@ -70,13 +70,29 @@ def main(args):
                     
                     assert second_graal_outcome != ''
 
+                    merged_test_execution_outcome = ''
+                    if isinstance(merged_schema['classes'][class_]['methods'][method_]['test_execution'], dict):
+                        merged_test_execution_outcome = 'exercised'
+                    else:
+                        merged_test_execution_outcome = merged_schema['classes'][class_]['methods'][method_]['test_execution']
+                    
+                    assert merged_test_execution_outcome != ''
+
+                    second_test_execution_outcome = ''
+                    if isinstance(second_schema['classes'][class_]['methods'][method_]['test_execution'], dict):
+                        second_test_execution_outcome = 'exercised'
+                    else:
+                        second_test_execution_outcome = second_schema['classes'][class_]['methods'][method_]['test_execution']
+                    
+                    assert second_test_execution_outcome != ''
+
                     if merged_schema['classes'][class_]['methods'][method_]['translation_status'] != 'attempted' and second_schema['classes'][class_]['methods'][method_]['translation_status'] == 'attempted':
                         merged_schema['classes'][class_]['methods'][method_] = second_schema['classes'][class_]['methods'][method_]
                     elif merged_schema['classes'][class_]['methods'][method_]['translation_status'] == 'attempted' and merged_schema['classes'][class_]['methods'][method_]['syntactic_validation'] != 'parseable' and second_schema['classes'][class_]['methods'][method_]['syntactic_validation'] == 'parseable':
                         merged_schema['classes'][class_]['methods'][method_] = second_schema['classes'][class_]['methods'][method_]
                     elif merged_schema['classes'][class_]['methods'][method_]['translation_status'] == 'attempted' and merged_graal_outcome != 'success' and second_graal_outcome == 'success':
                         merged_schema['classes'][class_]['methods'][method_] = second_schema['classes'][class_]['methods'][method_]
-                    elif merged_schema['classes'][class_]['methods'][method_]['translation_status'] == 'attempted' and merged_schema['classes'][class_]['methods'][method_]['test_execution'] != 'exercised' and second_schema['classes'][class_]['methods'][method_]['test_execution'] == 'exercised':
+                    elif merged_schema['classes'][class_]['methods'][method_]['translation_status'] == 'attempted' and merged_test_execution_outcome != 'exercised' and second_test_execution_outcome == 'exercised':
                         merged_schema['classes'][class_]['methods'][method_] = second_schema['classes'][class_]['methods'][method_]
                 
                 if 'static_initializers' in second_schema['classes'][class_]:
