@@ -73,16 +73,10 @@ If you face any errors, there might be a problem in translating your EvoSuite te
 If you want to investigate the effect of program transformation, please simply follow the steps in [Project Reduction, Program Transformation and Test Decomposition](#project-reduction-program-transformation-and-test-decomposition), and only perform the reduction step. You can then use CodeQL for program analysis and schema creation as mentioned in [Translate New Java Projects](#translate-new-java-projects).
 
 #### Choice of LLM
-If you want to merge results of two different models, please first move each model result under `data/results`, and then execute the following:
+If you want to see the results of GPT-4o, please execute the following for different projects:
 
 ```
-bash scripts/merge_results.sh 0.0 deepseek-coder-33b-instruct gpt-4o-2024-11-20
-```
-
-This will merge results and create a new directory under `data/results/{$first_model}_{$second_model}_MERGED`. You can then see the results by running:
-
-```
-bash scripts/print_results.sh commons-fileupload 0.0 deepseek-coder-33b-instruct_gpt-4o-2024-11-20_MERGED data/results
+bash scripts/print_results.sh commons-fileupload 0.0 gpt-4o-2024-11-20 data/schemas_decomposed_tests/translations
 ```
 
 #### Impact of Program Decomposition
