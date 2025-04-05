@@ -1,5 +1,12 @@
 # AlphaTrans
-This repository contains artifacts of AlphaTrans from the paper ["Repository-Level Compositional Code Translation and Validation"](https://arxiv.org/abs/2410.24117).
+
+Artifact repository for the paper [_AlphaTrans: A Neuro-Symbolic Compositional Approach for Repository-Level Code Translation and Validation_](https://arxiv.org/abs/2410.24117), accepted at _FSE 2025_, Trondheim, Norway.
+Authors are [Ali Reza Ibrahimzada][ali], Kaiyao Ke, Mrigank Pawagi, Muhammad Salman Abid, [Rangeet Pan][rangeet], Saurabh Sinha, and [Reyhaneh Jabbarvand][reyhaneh].
+
+[rangeet]: https://rangeetpan.github.io/
+[ali]: https://alirezai.cs.illinois.edu/
+[reyhaneh]: https://reyhaneh.cs.illinois.edu/index.htm
+
 
 ## Getting Started
 We provide a [`Dockerfile`](/Dockerfile) which installs all necessary dependencies to reproduce the results of AlphaTrans. Please download [Docker](https://www.docker.com/), and then execute the following to create a docker image and execute the container in interactive mode:
@@ -223,6 +230,9 @@ After successful execution, this should create the [`cleaned_final_projects_deco
 
 > [!NOTE]
 > There might be a need to do some small manual changes after test decomposition. For instance removing `@Test(expected = IllegalArgumentException.class)` from test annotation as we do not know ahead of time which decomposed tests throw exception. Please refer to our reference decomposed tests (e.g., [`cleaned_final_projects_decomposed_tests`](/java_projects/cleaned_final_projects_decomposed_tests/)) for specific examples. A project with decomposed tests is considered ok as long as it can be compiled by maven.
+
+## Partial Translations
+All generated partial Python translations are available on [Zenodo](https://doi.org/10.5281/zenodo.13826582).
 
 ## Contact
 We look forward to hearing your feedback. Please open an issue for any questions or comments 🙏.
