@@ -1,0 +1,263 @@
+{
+    "MultipartStreamTest": [
+        [
+            "MultipartStream",
+            "org.apache.commons.fileupload.MultipartStream"
+        ],
+        [
+            "ProgressListener",
+            "org.apache.commons.fileupload.ProgressListener"
+        ]
+    ],
+    "ParameterParserTest": [
+        [
+            "ParameterParser",
+            "org.apache.commons.fileupload.ParameterParser"
+        ]
+    ],
+    "MockHttpServletRequest": [
+        [
+            "FileUploadBase",
+            "org.apache.commons.fileupload.FileUploadBase"
+        ]
+    ],
+    "DiskFileItemSerializeTest": [],
+    "ProgressListenerTest": [
+        [
+            "ProgressListener",
+            "org.apache.commons.fileupload.ProgressListener"
+        ]
+    ],
+    "Util": [],
+    "Constants": [],
+    "FileItemHeadersTest": [
+        [
+            "FileItemHeadersImpl",
+            "org.apache.commons.fileupload.util.FileItemHeadersImpl"
+        ]
+    ],
+    "DefaultFileItemTest": [],
+    "Base64DecoderTestCase": [
+        [
+            "Base64Decoder",
+            "org.apache.commons.fileupload.util.mime.Base64Decoder"
+        ]
+    ],
+    "MimeUtilityTestCase": [
+        [
+            "MimeUtility",
+            "org.apache.commons.fileupload.util.mime.MimeUtility"
+        ]
+    ],
+    "QuotedPrintableDecoderTestCase": [
+        [
+            "QuotedPrintableDecoder",
+            "org.apache.commons.fileupload.util.mime.QuotedPrintableDecoder"
+        ]
+    ],
+    "MockPortletActionRequest": [
+        [
+            "FileUploadBase",
+            "org.apache.commons.fileupload.FileUploadBase"
+        ]
+    ],
+    "FileUpload": [
+        [
+            "FileItemFactory",
+            "org.apache.commons.fileupload.FileItemFactory"
+        ],
+        [
+            "FileUploadBase",
+            "org.apache.commons.fileupload.FileUploadBase"
+        ]
+    ],
+    "FileItemIterator": [
+        [
+            "FileItemStream",
+            "org.apache.commons.fileupload.FileItemStream"
+        ],
+        [
+            "FileUploadException",
+            "org.apache.commons.fileupload.FileUploadException"
+        ]
+    ],
+    "DefaultFileItemFactory": [
+        [
+            "DiskFileItemFactory",
+            "org.apache.commons.fileupload.disk.DiskFileItemFactory"
+        ]
+    ],
+    "FileCountLimitExceededException": [
+        [
+            "FileUploadException",
+            "org.apache.commons.fileupload.FileUploadException"
+        ]
+    ],
+    "ParameterParser": [
+        [
+            "MimeUtility",
+            "org.apache.commons.fileupload.util.mime.MimeUtility"
+        ]
+    ],
+    "FileItem": [
+        [
+            "FileItemHeadersSupport",
+            "org.apache.commons.fileupload.FileItemHeadersSupport"
+        ]
+    ],
+    "FileUploadBase": [
+        [
+            "FileItem",
+            "org.apache.commons.fileupload.FileItem"
+        ],
+        [
+            "FileItemFactory",
+            "org.apache.commons.fileupload.FileItemFactory"
+        ],
+        [
+            "FileItemHeaders",
+            "org.apache.commons.fileupload.FileItemHeaders"
+        ],
+        [
+            "FileUploadException",
+            "org.apache.commons.fileupload.FileUploadException"
+        ],
+        [
+            "ParameterParser",
+            "org.apache.commons.fileupload.ParameterParser"
+        ],
+        [
+            "ProgressListener",
+            "org.apache.commons.fileupload.ProgressListener"
+        ],
+        [
+            "RequestContext",
+            "org.apache.commons.fileupload.RequestContext"
+        ],
+        [
+            "FileItemHeadersImpl",
+            "org.apache.commons.fileupload.util.FileItemHeadersImpl"
+        ]
+    ],
+    "RequestContext": [],
+    "FileItemHeadersSupport": [
+        [
+            "FileItemHeaders",
+            "org.apache.commons.fileupload.FileItemHeaders"
+        ]
+    ],
+    "DefaultFileItem": [
+        [
+            "DiskFileItem",
+            "org.apache.commons.fileupload.disk.DiskFileItem"
+        ]
+    ],
+    "MultipartStream": [
+        [
+            "FileUploadBase",
+            "org.apache.commons.fileupload.FileUploadBase"
+        ],
+        [
+            "FileItemStream",
+            "org.apache.commons.fileupload.FileItemStream"
+        ],
+        [
+            "Closeable",
+            "org.apache.commons.fileupload.util.Closeable"
+        ],
+        [
+            "ProgressListener",
+            "org.apache.commons.fileupload.ProgressListener"
+        ]
+    ],
+    "FileItemHeaders": [],
+    "FileUploadException": [],
+    "FileItemFactory": [
+        [
+            "FileItem",
+            "org.apache.commons.fileupload.FileItem"
+        ]
+    ],
+    "InvalidFileNameException": [],
+    "FileItemStream": [
+        [
+            "FileItemHeadersSupport",
+            "org.apache.commons.fileupload.FileItemHeadersSupport"
+        ]
+    ],
+    "ProgressListener": [],
+    "UploadContext": [
+        [
+            "RequestContext",
+            "org.apache.commons.fileupload.RequestContext"
+        ]
+    ],
+    "package-info": [],
+    "DiskFileItem": [
+        [
+            "FileItemHeaders",
+            "org.apache.commons.fileupload.FileItemHeaders"
+        ],
+        [
+            "ParameterParser",
+            "org.apache.commons.fileupload.ParameterParser"
+        ],
+        [
+            "Streams",
+            "org.apache.commons.fileupload.util.Streams"
+        ]
+    ],
+    "DiskFileItemFactory": [
+        [
+            "DiskFileItem",
+            "org.apache.commons.fileupload.disk.DiskFileItem"
+        ]
+    ],
+    "ServletRequestContext": [],
+    "LimitedInputStream": [
+        [
+            "Closeable",
+            "org.apache.commons.fileupload.util.Closeable"
+        ]
+    ],
+    "Streams": [
+        [
+            "InvalidFileNameException",
+            "org.apache.commons.fileupload.InvalidFileNameException"
+        ]
+    ],
+    "Closeable": [],
+    "FileItemHeadersImpl": [
+        [
+            "FileItemHeaders",
+            "org.apache.commons.fileupload.FileItemHeaders"
+        ]
+    ],
+    "MimeUtility": [
+        [
+            "Base64Decoder",
+            "org.apache.commons.fileupload.util.mime.Base64Decoder"
+        ],
+        [
+            "ParseException",
+            "org.apache.commons.fileupload.util.mime.ParseException"
+        ],
+        [
+            "QuotedPrintableDecoder",
+            "org.apache.commons.fileupload.util.mime.QuotedPrintableDecoder"
+        ]
+    ],
+    "ParseException": [],
+    "QuotedPrintableDecoder": [],
+    "Base64Decoder": [],
+    "PortletFileUpload": [
+        [
+            "FileItemFactory",
+            "org.apache.commons.fileupload.FileItemFactory"
+        ],
+        [
+            "FileUpload",
+            "org.apache.commons.fileupload.FileUpload"
+        ]
+    ]
+}

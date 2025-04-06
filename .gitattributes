@@ -1,0 +1,3 @@
+data/call_graphs filter=lfs diff=lfs merge=lfs -text
+data/dependencies_decomposed_tests filter=lfs diff=lfs merge=lfs -text
+data/source_test_execution_decomposed_tests filter=lfs diff=lfs merge=lfs -text
