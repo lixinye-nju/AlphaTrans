@@ -20,6 +20,8 @@ RUN apt-get update && apt-get install -y \
     unzip \
     rsync \
     vim \
+    tmux \
+    git-lfs \
     && rm -rf /var/lib/apt/lists/*
 
 RUN arch=$(uname -m) && \
