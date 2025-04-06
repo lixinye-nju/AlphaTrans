@@ -1,5 +1,15 @@
 FROM ubuntu:22.04
 
+# Set proxy environment variables globally
+ENV http_proxy=http://172.26.93.30:7890
+ENV https_proxy=http://172.26.93.30:7890
+ENV HTTP_PROXY=http://172.26.93.30:7890
+ENV HTTPS_PROXY=http://172.26.93.30:7890
+
+# Configure apt to use proxy
+RUN echo 'Acquire::http::Proxy "http://172.26.93.30:7890";' > /etc/apt/apt.conf.d/proxy.conf && \
+    echo 'Acquire::https::Proxy "http://172.26.93.30:7890";' >> /etc/apt/apt.conf.d/proxy.conf
+
 RUN apt-get update && apt-get install -y \
     python3.11 \
     python3-pip \
@@ -60,6 +70,11 @@ RUN git clone https://github.com/tree-sitter/tree-sitter-python.git /home/AlphaT
 RUN mkdir -p /home/AlphaTrans/misc/java-callgraph
 RUN git clone https://github.com/gousiosg/java-callgraph.git /home/AlphaTrans/misc/java-callgraph
 WORKDIR /home/AlphaTrans/misc/java-callgraph
+
+# Configure Maven to use proxy
+RUN mkdir -p /root/.m2 \
+    && echo '<settings><proxies><proxy><id>https-proxy</id><active>true</active><protocol>http</protocol><host>172.26.93.30</host><port>7890</port></proxy></proxies></settings>' > /root/.m2/settings.xml
+
 RUN mvn clean install -DskipTests
 
 WORKDIR /home/AlphaTrans
